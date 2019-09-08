@@ -19,8 +19,11 @@
         <h3>Ты это нарочно что ли?!</h3>
     {% elif num_errors >= 20 and num_errors < 25 %}
         <h2>Ты меня довести решил?!?!?!?!?!!?!?!?</h2>
-    {% else %}
+    {% elif num_errors >= 25 and num_errors < 30 %}
         <h1>НУ ВСЁ! ТЫ МЕНЯ ДОВЁЛ, СВОЛОЧЬ!!!!<h1/>
         <img src="{% static 'images/dovel.png' %}", alt="ЪУЪ, СЦУКО!"/>
+    {% else %}
+        <h1>НУ ВСЁ! ТЫ МЕНЯ ДОВЁЛ, СВОЛОЧЬ!!!!<h1/>
+        <a href="{% static 'images/yshel.jpg' %}" title="Даже не смей меня трогать!"> <img src="{% static 'images/dovel.png' %}", alt="ЪУЪ, СЦУКО!"/></a>
     {% endif %}
 {% endblock %}
