@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Домашняя страница</h1>
+
+  <p>Это сайт <em>Японских Кроссвордов</em></p>
+
+<h2>Динамические данные</h2>
+
+  <p>На сайте:</p>
+  <ul>
+    <li><strong>Авторов:</strong> {{ num_authors }}</li>
+    <li><strong>Кроссвордов:</strong> {{ num_crosswords }}</li>
+  </ul>
+
+{% endblock %}

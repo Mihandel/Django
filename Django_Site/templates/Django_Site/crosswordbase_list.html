@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Все кроссворды</h1>
+    <hr>
+    Текущее время: {{ Current_Date }}
+    <hr>
+    {% if crosswordbase_list %}
+    <ul>
+
+      {% for crossword in crosswordbase_list %}
+      <li>
+        <a href="{{ crossword.get_absolute_url }}">{{ crossword }}</a>
+        {% if crossword.comment %}
+            <br>
+            <em>{{ crossword.comment }}</em>
+        {% endif %}
+      </li>
+      {% endfor %}
+
+    </ul>
+    {% else %}
+      <p>Не загружены кроссворды.</p>
+    {% endif %}       
+{% endblock %}

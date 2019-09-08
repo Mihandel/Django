@@ -1,0 +1,26 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Страница не существует!</h1>
+
+    {% load static %}
+    <p>{{ error_text }}</p>
+    <img src="{% static 'images/error.gif' %}", alt="Делай как я"/>
+    <hr>
+    <p>Ты вляпался в ошибку уже {{ num_errors }} раз за эту сессию<p>
+    <hr>
+    {% if num_errors < 5 %}
+        <h6>Ну всякое бывает</h6>
+    {% elif num_errors >= 5 and num_errors < 10 %}
+        <h5>Спишем на совпадение</h5>
+    {% elif num_errors >= 10 and num_errors < 15 %}
+        <h4>Уже с десяток попаданий на ошибку! Выглядит подозрительно...</h4>
+    {% elif num_errors >= 15 and num_errors < 20 %}
+        <h3>Ты это нарочно что ли?!</h3>
+    {% elif num_errors >= 20 and num_errors < 25 %}
+        <h2>Ты меня довести решил?!?!?!?!?!!?!?!?</h2>
+    {% else %}
+        <h1>НУ ВСЁ! ТЫ МЕНЯ ДОВЁЛ, СВОЛОЧЬ!!!!<h1/>
+        <img src="{% static 'images/dovel.png' %}", alt="ЪУЪ, СЦУКО!"/>
+    {% endif %}
+{% endblock %}
